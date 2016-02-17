@@ -59,6 +59,31 @@ a:hover {
   text-decoration: none;
 }
 
+
+
+#slider-control {
+  padding: 3px;
+  position: fixed;
+  right: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#slider-control a {
+  padding: 3px;
+}
+
+#slider-control .dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#slider-control .active .dot {
+  background-color: #fff;
+}
+
 /* for debug */
 /*.section {
   background-color: rgba(255,0,0,0.3);
@@ -73,6 +98,10 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.section-1 {
+  background: url("../img/background.jpg");
 }
 
 .nav-links {
@@ -117,5 +146,13 @@ a:hover {
   flex-basis: 0;
   flex-grow: 1;
   padding-right: 5vw;
+}
+
+#android-robot {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  overflow: hidden;
+  transform: rotate(-45deg);
 }
 
