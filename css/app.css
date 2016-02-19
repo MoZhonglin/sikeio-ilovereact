@@ -102,10 +102,17 @@ a:hover {
   overflow: hidden;
 }
 
-.section-1 {
+#intro-section__bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: url("../img/background.jpg");
   background-size: cover;
   background-position: center;
+  opacity: 100;
 }
 
 .overlay {
@@ -142,12 +149,24 @@ a:hover {
 
 .section-2 {
   flex-direction: row;
-  align-items: center;
+}
+
+#iphone-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(255,0,0,1);*/
+  transform: translate(0, -40%);
 }
 
 .iphone-demo {
-  flex-basis: 0;
+  flex-basis: 50%;
   flex-grow: 1;
+  justify-content: center;
+}
+
+#iphone-2-demo {
+  opacity: 0;
 }
 
 .iphone-screen-img {
@@ -158,9 +177,13 @@ a:hover {
 }
 
 .feature-description {
-  flex-basis: 0;
-  flex-grow: 1;
+  right: 0;
+  /*flex-basis: 50%;*/
+  /*flex-grow: 1;*/
+  width: 50%;
+  /*height: 100%;*/
   padding-right: 5vw;
+  align-items: flex-start;
 }
 
 #android-robot {

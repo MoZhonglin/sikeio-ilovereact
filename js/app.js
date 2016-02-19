@@ -67,10 +67,48 @@ function addSmoothScrolling() {
       })}(link));
   }
 }
+
+function setupScrollMagic() {
+  var controller = new ScrollMagic.Controller();
+  var intro_mask = new ScrollMagic.Scene({
+    triggerElement: "#native",
+    triggerHook: "onEnter",
+    duration: "100%",
+  }).setTween("#intro-section__bg", {opacity: 0})
+    .addIndicators()
+    .addTo(controller);
+    
+  //TweenMax.to("#iphone-overlay", 1, {width: "50%", y: 0}
+  var move_iphone = new ScrollMagic.Scene({
+    triggerElement: "#native",
+    triggerHook: "onEnter", 
+    duration: "100%",
+  }).setTween("#iphone-overlay", {width: "50%", y:0})
+    .addIndicators()
+    .addTo(controller);
+
+  var pin_iphone = new ScrollMagic.Scene({
+    triggerElement: "#native",
+    triggerHook: "onLeave", 
+    duration: "100%",
+  }).setPin("#iphone-overlay")
+    .addIndicators({name: "pin iphone"})
+    .addTo(controller);
+
+  var switch_iphone_screen = new ScrollMagic.Scene({
+    triggerElement: "#touch",
+    triggerHook: "onLeave",
+    duration: "100%",
+  }).setTween("#iphone-screen", {src: "img/swype-demo.jpg"})
+    .addIndicators()
+    .addTo(controller);
+}
+
 window.onload = function () {
   animateLogo();
   animateRobot();
   addSmoothScrolling();
+  setupScrollMagic();
 };
 
 window.onscroll = function() {
