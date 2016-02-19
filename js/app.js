@@ -75,7 +75,6 @@ function setupScrollMagic() {
     triggerHook: "onEnter",
     duration: "100%",
   }).setTween("#intro-section__bg", {opacity: 0})
-    .addIndicators()
     .addTo(controller);
     
   //TweenMax.to("#iphone-overlay", 1, {width: "50%", y: 0}
@@ -84,7 +83,6 @@ function setupScrollMagic() {
     triggerHook: "onEnter", 
     duration: "100%",
   }).setTween("#iphone-overlay", {width: "50%", y:0})
-    .addIndicators()
     .addTo(controller);
 
   var pin_iphone = new ScrollMagic.Scene({
@@ -92,15 +90,13 @@ function setupScrollMagic() {
     triggerHook: "onLeave", 
     duration: "100%",
   }).setPin("#iphone-overlay")
-    .addIndicators({name: "pin iphone"})
     .addTo(controller);
 
   var switch_iphone_screen = new ScrollMagic.Scene({
     triggerElement: "#touch",
-    triggerHook: "onLeave",
+    triggerHook: "50%",
     duration: "100%",
   }).setTween("#iphone-screen", {src: "img/swype-demo.jpg"})
-    .addIndicators()
     .addTo(controller);
 }
 
